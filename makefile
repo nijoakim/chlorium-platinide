@@ -3,6 +3,9 @@ SOURCE=$(wildcard platina/*.py) $(wildcard platina/*/*.py) $(wildcard platina/*.
 
 all: build
 
+run:
+	platina/main.py
+
 clean:
 	rm -rf build
 	rm -rf platina/*.so
