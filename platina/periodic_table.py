@@ -24,8 +24,13 @@ periods = [None]
 for i in range(7):
 	periods.append([None]*19)
 
+# Lanthanides and actinides
+for i in range(2):
+	periods.append([None]*15)
+
 def print_table():
-	for period in periods:
+	# Non-special-position-elements
+	for period in periods[:-2]:
 		if period is not None:
 			for element in period[1:]:
 				if element is not None:
@@ -33,6 +38,19 @@ def print_table():
 				else:
 					print('    ', end='')
 			print()
+	
+	# Lanthanides
+	print()
+	print('      * ', end='')
+	for element in periods[-1]:
+		print(element, ' '*(3-len(str(element))), end='')
+	print()
+
+	# Actinides
+	print('     ** ', end='')
+	for element in periods[-2]:
+		print(element, ' '*(3-len(str(element))), end='')
+	print()
 
 class element:
 	def __init__(
