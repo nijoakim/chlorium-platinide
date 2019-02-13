@@ -32,6 +32,10 @@ stdscr = None
 symbols = {}
 names   = {}
 
+# Cursor coordinates
+sel_period = 0
+sel_group  = 0
+
 # Periods and groups
 periods = []
 for i in range(7):
@@ -42,10 +46,18 @@ for i in range(2):
 	periods.append([None]*14)
 
 def print_table():
+	# Non-special-position elements
 	for row, period in enumerate(periods[:-2]):
 		for col, element in enumerate(period):
+			# Highlight selected
+			if  sel_period == col \
+			and sel_group == row:
+				attr = curses.A_REVERSE
+			else:
+				attr = 0
+
 			if element is not None:
-				stdscr.addstr(row, col*4, str(element))
+				stdscr.addstr(row, col*4, str(element), attr)
 
 	# Lanthanides
 	stdscr.addstr(7+1, 2*4, '  *')
