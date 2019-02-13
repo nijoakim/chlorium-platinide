@@ -15,12 +15,36 @@
 # You should have received a copy of the GNU General Public License
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-import periodic_table as pt
-import elements as e
+#=========
+# Imports
+#=========
 
-def main():
+# External
+import curses
+from curses import wrapper
+
+# Internal
+import elements as e
+import periodic_table as pt
+
+#======
+# Main
+#======
+
+def main(stdscr):
+	# Share curses screen with periodic table
+	pt.stdscr = stdscr
+
+	# Init. curses
+	curses.curs_set(False)
+
+	# Print periodic table
 	pt.print_table()
+
+	# Refresh screen and await key press
+	stdscr.refresh()
+	stdscr.getkey()
 
 # Run main
 if __name__ == "__main__":
-    main()
+    wrapper(main) # Curses wrapper for main
