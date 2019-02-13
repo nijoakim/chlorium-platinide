@@ -35,6 +35,11 @@ def main(stdscr):
 	# Share curses screen with periodic table
 	pt.stdscr = stdscr
 
+	# Curses colors
+	curses.use_default_colors()
+	for i in range(1, 16):
+		curses.init_pair(i, i, -1)
+
 	# Init. curses
 	curses.curs_set(False)
 

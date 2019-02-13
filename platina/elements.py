@@ -158,3 +158,11 @@ pt.element('Fm', 'Fermium',      -2, 11)
 pt.element('Md', 'Mendelevium',  -2, 12)
 pt.element('No', 'Nobelium',     -2, 13)
 pt.element('Lr', 'Lawrenceium',  -2, 14)
+
+#============================
+# Group the elements by type
+#============================
+
+pt.element_type('Reactive nonmetal', 'H', 'C', 'N', 'O', 'F', 'P', 'S', 'Cl', 'Se', 'Br', 'I')
+pt.element_type('Noble gas',         'He', 'Ne', 'Ar', 'Kr', 'Xe', 'Rn')
+pt.element_type('Alkali metal',      'Li', 'Na', 'K', 'Rb', 'Cs', 'Fr')
