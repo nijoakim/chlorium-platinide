@@ -47,9 +47,12 @@ for i in range(2):
 
 # color dictionary
 colors = {
-	'Reactive nonmetal': 3, # Yellow
-	'Noble gas':         6, # Cyan
-	'Alkali metal':      1, # Red
+	'Reactive nonmetal':    3,  # Yellow
+	'Noble gas':            6,  # Cyan
+	'Alkali metal':         1,  # Red
+	'Alkaline earth metal': 11, # Pale yellow
+	'Transition metal':     9,  # Pale red
+	'Metalloid':            2,  # Green
 }
 
 def print_table():

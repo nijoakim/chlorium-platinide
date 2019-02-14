@@ -92,7 +92,7 @@ pt.element('*',  'Lanthanides', 6, 3)
 pt.element('Hf', 'Hafnium',     6, 4)
 pt.element('Ta', 'Tantalum',    6, 5)
 pt.element('W',  'Tungsten',    6, 6)
-pt.element('Rh', 'Rhenium',     6, 7)
+pt.element('Re', 'Rhenium',     6, 7)
 pt.element('Os', 'Osmium',      6, 8)
 pt.element('Ir', 'Iridium',     6, 9)
 pt.element('Pt', 'Platinum',    6, 10)
@@ -163,6 +163,15 @@ pt.element('Lr', 'Lawrenceium',  -2, 14)
 # Group the elements by type
 #============================
 
-pt.element_type('Reactive nonmetal', 'H', 'C', 'N', 'O', 'F', 'P', 'S', 'Cl', 'Se', 'Br', 'I')
-pt.element_type('Noble gas',         'He', 'Ne', 'Ar', 'Kr', 'Xe', 'Rn')
-pt.element_type('Alkali metal',      'Li', 'Na', 'K', 'Rb', 'Cs', 'Fr')
+pt.element_type('Reactive nonmetal',    'H', 'C', 'N', 'O', 'F', 'P', 'S', 'Cl', 'Se', 'Br', 'I')
+pt.element_type('Noble gas',            'He', 'Ne', 'Ar', 'Kr', 'Xe', 'Rn')
+pt.element_type('Alkali metal',         'Li', 'Na', 'K', 'Rb', 'Cs', 'Fr')
+pt.element_type('Alkaline earth metal', 'Be', 'Mg', 'Ca', 'Sr', 'Ba', 'Ra')
+pt.element_type('Metalloid',            'B', 'Si', 'Ge', 'As', 'Sb', 'Te', 'At')
+
+pt.element_type('Transition metal',
+	'Sc', 'Ti', 'V', 'Cr', 'Mn', 'Fe', 'Co', 'Ni', 'Cu',
+	'Y', 'Zr', 'Nb', 'Mo', 'Tc', 'Ru', 'Rh', 'Pd', 'Ag',
+	'Hf', 'Ta', 'W', 'Re', 'Os', 'Ir', 'Pt', 'Au',
+	'Rf', 'Db', 'Sg', 'Bh', 'Hs',
+)
