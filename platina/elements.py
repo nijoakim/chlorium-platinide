@@ -126,52 +126,59 @@ pt.element('Ts', 'Tennessine',    7, 17)
 pt.element('Og', 'Oganesson',     7, 18)
 
 # Lanthanides
-pt.element('La', 'Lanthanium',   -1, 0)
-pt.element('Ce', 'Cerium',       -1, 1)
-pt.element('Pr', 'Praseodymium', -1, 2)
-pt.element('Nd', 'Neodynium',    -1, 3)
-pt.element('Pm', 'Promethium',   -1, 4)
-pt.element('Sm', 'Samarium',     -1, 5)
-pt.element('Eu', 'Europium',     -1, 6)
-pt.element('Gd', 'Gadolinium',   -1, 7)
-pt.element('Tb', 'Terbium',      -1, 8)
-pt.element('Dy', 'Dysprosium',   -1, 9)
-pt.element('Ho', 'Holmium',      -1, 10)
-pt.element('Er', 'Erbium',       -1, 11)
-pt.element('Tm', 'Thulium',      -1, 12)
-pt.element('Yb', 'Ytterbium',    -1, 13)
-pt.element('Lu', 'Lutetium',     -1, 14)
+pt.element('La', 'Lanthanium',   -2, 1)
+pt.element('Ce', 'Cerium',       -2, 2)
+pt.element('Pr', 'Praseodymium', -2, 3)
+pt.element('Nd', 'Neodynium',    -2, 4)
+pt.element('Pm', 'Promethium',   -2, 5)
+pt.element('Sm', 'Samarium',     -2, 6)
+pt.element('Eu', 'Europium',     -2, 7)
+pt.element('Gd', 'Gadolinium',   -2, 8)
+pt.element('Tb', 'Terbium',      -2, 9)
+pt.element('Dy', 'Dysprosium',   -2, 10)
+pt.element('Ho', 'Holmium',      -2, 11)
+pt.element('Er', 'Erbium',       -2, 12)
+pt.element('Tm', 'Thulium',      -2, 13)
+pt.element('Yb', 'Ytterbium',    -2, 14)
+pt.element('Lu', 'Lutetium',     -2, 15)
 
 # Actinides
-pt.element('Ac', 'Actinium',     -2, 0)
-pt.element('Th', 'Thorium',      -2, 1)
-pt.element('Pa', 'Protactinium', -2, 2)
-pt.element('U',  'Uranium',      -2, 3)
-pt.element('Np', 'Neptunium',    -2, 4)
-pt.element('Pu', 'Plutonium',    -2, 5)
-pt.element('Am', 'Americium',    -2, 6)
-pt.element('Cm', 'Curium',       -2, 7)
-pt.element('Bk', 'Berkelium',    -2, 8)
-pt.element('Cf', 'Californium',  -2, 9)
-pt.element('Es', 'Einsteinium',  -2, 10)
-pt.element('Fm', 'Fermium',      -2, 11)
-pt.element('Md', 'Mendelevium',  -2, 12)
-pt.element('No', 'Nobelium',     -2, 13)
-pt.element('Lr', 'Lawrenceium',  -2, 14)
+pt.element('Ac', 'Actinium',     -1, 1)
+pt.element('Th', 'Thorium',      -1, 2)
+pt.element('Pa', 'Protactinium', -1, 3)
+pt.element('U',  'Uranium',      -1, 4)
+pt.element('Np', 'Neptunium',    -1, 5)
+pt.element('Pu', 'Plutonium',    -1, 6)
+pt.element('Am', 'Americium',    -1, 7)
+pt.element('Cm', 'Curium',       -1, 8)
+pt.element('Bk', 'Berkelium',    -1, 9)
+pt.element('Cf', 'Californium',  -1, 10)
+pt.element('Es', 'Einsteinium',  -1, 11)
+pt.element('Fm', 'Fermium',      -1, 12)
+pt.element('Md', 'Mendelevium',  -1, 13)
+pt.element('No', 'Nobelium',     -1, 14)
+pt.element('Lr', 'Lawrenceium',  -1, 15)
 
 #============================
 # Group the elements by type
 #============================
 
-pt.element_type('Reactive nonmetal',    'H', 'C', 'N', 'O', 'F', 'P', 'S', 'Cl', 'Se', 'Br', 'I')
-pt.element_type('Noble gas',            'He', 'Ne', 'Ar', 'Kr', 'Xe', 'Rn')
-pt.element_type('Alkali metal',         'Li', 'Na', 'K', 'Rb', 'Cs', 'Fr')
-pt.element_type('Alkaline earth metal', 'Be', 'Mg', 'Ca', 'Sr', 'Ba', 'Ra')
-pt.element_type('Metalloid',            'B', 'Si', 'Ge', 'As', 'Sb', 'Te', 'At')
-
+pt.element_type('Reactive nonmetal',     'H', 'C', 'N', 'O', 'F', 'P', 'S', 'Cl', 'Se', 'Br', 'I')
+pt.element_type('Noble gas',             'He', 'Ne', 'Ar', 'Kr', 'Xe', 'Rn')
+pt.element_type('Alkali metal',          'Li', 'Na', 'K', 'Rb', 'Cs', 'Fr')
+pt.element_type('Alkaline earth metal',  'Be', 'Mg', 'Ca', 'Sr', 'Ba', 'Ra')
+pt.element_type('Metalloid',             'B', 'Si', 'Ge', 'As', 'Sb', 'Te', 'At')
+pt.element_type('Post-transition metal', 'Al', 'Zn', 'Ga', 'Cd', 'In', 'Sn', 'Hg', 'Tl', 'Pb', 'Bi', 'Po', 'Po', 'Cn')
 pt.element_type('Transition metal',
 	'Sc', 'Ti', 'V', 'Cr', 'Mn', 'Fe', 'Co', 'Ni', 'Cu',
 	'Y', 'Zr', 'Nb', 'Mo', 'Tc', 'Ru', 'Rh', 'Pd', 'Ag',
 	'Hf', 'Ta', 'W', 'Re', 'Os', 'Ir', 'Pt', 'Au',
 	'Rf', 'Db', 'Sg', 'Bh', 'Hs',
 )
+pt.element_type('Lanthanides',
+	'*', 'La', 'Ce', 'Pr', 'Nd', 'Pm', 'Sm', 'Eu', 'Gd', 'Tb', 'Dy', 'Ho', 'Er', 'Tm', 'Yb', 'Lu',
+)
+pt.element_type('Actinides',
+	'**', 'Ac', 'Th', 'Pa', 'U', 'Np', 'Pu', 'Am', 'Cm', 'Bk', 'Cf', 'Es', 'Fm', 'Md', 'No', 'Lr',
+)
+pt.element_type('Unknown', 'Mt', 'Ds', 'Rg', 'Nh', 'Fl', 'Mc', 'Lv', 'Ts', 'Og')

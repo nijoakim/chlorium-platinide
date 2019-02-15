@@ -43,22 +43,38 @@ for i in range(7):
 
 # Lanthanides and actinides
 for i in range(2):
-	periods.append([None]*14)
+	periods.append([None]*15)
 
-# color dictionary
+# Color dictionary
 colors = {
-	'Reactive nonmetal':    3,  # Yellow
-	'Noble gas':            6,  # Cyan
-	'Alkali metal':         1,  # Red
-	'Alkaline earth metal': 11, # Pale yellow
-	'Transition metal':     9,  # Pale red
-	'Metalloid':            2,  # Green
+	'Reactive nonmetal':     3,  # Yellow
+	'Noble gas':             6,  # Cyan
+	'Alkali metal':          1,  # Red
+	'Alkaline earth metal':  11, # Pale yellow
+	'Transition metal':      9,  # Pale red
+	'Metalloid':             2,  # Green
+	'Post-transition metal': 15, # White
+	'Lanthanides':           13, # Pale magenta
+	'Actinides':             5,  # Magenta
+	'Unknown':               8,  # Gray
 }
 
 def print_table():
-	# Non-special-position elements
-	for row, period in enumerate(periods[:-2]):
+	# Write asterisks for the lanthanides and actinides
+	stdscr.addstr(len(periods)-1,   1*4, '  *', curses.color_pair(colors['Lanthanides']))
+	stdscr.addstr(len(periods)-1+1, 1*4, ' **', curses.color_pair(colors['Actinides']))
+
+	for row, period in enumerate(periods):
+		# Add a spacing row between the lanthanides/actinides and the main table
+		if row >= len(periods)-2:
+			row += 1
+
 		for col, element in enumerate(period):
+			# Indent the lanthanides and actinides
+			if  row >= len(periods)-2:
+				col += 2
+
+			# Write element
 			if element is not None:
 				# Highlight selected
 				if  sel_period == col \
@@ -71,18 +87,8 @@ def print_table():
 				if element.type in colors:
 					attr |= curses.color_pair(colors[element.type])
 
-				# Draw element
+				# Write
 				stdscr.addstr(row, col*4, str(element), attr)
-
-	# Lanthanides
-	stdscr.addstr(7+1, 2*4, '  *')
-	for col, element in enumerate(periods[-1]):
-		stdscr.addstr(7+1, (col+3)*4, str(element))
-
-	# Actinides
-	stdscr.addstr(7+2, 2*4, ' **')
-	for col, element in enumerate(periods[-2]):
-		stdscr.addstr(7+2, (col+3)*4, str(element))
 
 class element:
 	def __init__(
