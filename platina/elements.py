@@ -1,5 +1,3 @@
-#!/usr/bin/python3
-
 # Copyright 2019 Joakim Nilsson
 #
 # This program is free software: you can redistribute it and/or modify
@@ -15,7 +13,7 @@
 # You should have received a copy of the GNU General Public License
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-import periodic_table as pt
+from . import periodic_table as pt
 
 #==================
 # Add the elements

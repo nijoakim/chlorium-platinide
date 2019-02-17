@@ -1,19 +1,18 @@
 PREFIX=/usr/local/bin
-SOURCE=$(wildcard platina/*.py) $(wildcard platina/*/*.py) $(wildcard platina/*.c) $(wildcard platina/*/*.c)
+SOURCE=$(wildcard platina/*.py) $(wildcard platina/*/*.py)
+
+# TODO: use prefix?
 
 all: build
 
 run:
-	platina/main.py
+	scripts/platina
 
 clean:
 	rm -rf build
-	rm -rf platina/*.so
 
 build: $(SOURCE)
 	./setup.py build
-	touch build
-	cp build/*/platina/*.so platina/
 
 install: build
 	./setup.py install

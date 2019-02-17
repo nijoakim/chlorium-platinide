@@ -1,5 +1,3 @@
-#!/usr/bin/python3
-
 # Copyright 2019 Joakim Nilsson
 #
 # This program is free software: you can redistribute it and/or modify
