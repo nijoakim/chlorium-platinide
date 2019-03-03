@@ -6,7 +6,7 @@ SOURCE=$(wildcard platina/*.py) $(wildcard platina/*/*.py)
 all: build
 
 run:
-	scripts/platina
+	python3 -m platina
 
 clean:
 	rm -rf build
