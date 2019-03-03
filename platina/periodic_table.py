@@ -31,7 +31,7 @@ symbols = {}
 names   = {}
 
 # Cursor coordinates
-sel_period = 2
+sel_period = 0
 sel_group  = 0
 
 # Periods and groups
