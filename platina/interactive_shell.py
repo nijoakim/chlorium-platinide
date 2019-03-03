@@ -20,6 +20,7 @@
 #=========
 
 # External
+import sys
 import curses
 from curses import wrapper
 
@@ -47,9 +48,32 @@ def _interactive_shell_curses(stdscr):
 	# Init. curses
 	curses.curs_set(False)
 
-	# Print periodic table
-	pt.print_table()
+	# Loop forever
+	while True:
+		# Print periodic table
+		pt.print_table()
 
-	# Refresh screen and await key press
-	stdscr.refresh()
-	stdscr.getkey()
+		# Refresh screen
+		stdscr.refresh()
+
+		# Keyboard events
+		key = stdscr.getch()
+
+		#===========================
+		# Hardcoded keyboard events
+		#===========================
+		# TODO: Make this configurable
+
+		# Simple navigation
+		if key == ord('j'):
+			pt.sel_period += 1
+		if key == ord('k'):
+			pt.sel_period -= 1
+		if key == ord('h'):
+			pt.sel_group -= 1
+		if key == ord('l'):
+			pt.sel_group += 1
+
+		# Quit
+		if key == ord('q'):
+			break

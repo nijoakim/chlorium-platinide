@@ -31,7 +31,7 @@ symbols = {}
 names   = {}
 
 # Cursor coordinates
-sel_period = 0
+sel_period = 2
 sel_group  = 0
 
 # Periods and groups
@@ -75,8 +75,8 @@ def print_table():
 			# Write element
 			if element is not None:
 				# Highlight selected
-				if  sel_period == col \
-				and sel_group == row:
+				if  sel_period == row \
+				and sel_group == col:
 					attr = curses.A_REVERSE
 				else:
 					attr = 0
