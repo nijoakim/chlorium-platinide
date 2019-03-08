@@ -27,6 +27,7 @@ from curses import wrapper
 # Internal
 from . import elements as e
 from . import periodic_table as pt
+from . import ui_functions as uif
 
 #======
 # Main
@@ -66,13 +67,13 @@ def _interactive_shell_curses(stdscr):
 
 		# Simple navigation
 		if key == ord('j'):
-			pt.sel_period += 1
+			uif.move_down()
 		if key == ord('k'):
 			pt.sel_period -= 1
 		if key == ord('h'):
 			pt.sel_group -= 1
 		if key == ord('l'):
-			pt.sel_group += 1
+			uif.move_right()
 
 		# Quit
 		if key == ord('q'):
