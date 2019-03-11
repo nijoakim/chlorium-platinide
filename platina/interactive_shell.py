@@ -69,9 +69,9 @@ def _interactive_shell_curses(stdscr):
 		if key == ord('j'):
 			uif.move_down()
 		if key == ord('k'):
-			pt.sel_period -= 1
+			uif.move_up()
 		if key == ord('h'):
-			pt.sel_group -= 1
+			uif.move_left()
 		if key == ord('l'):
 			uif.move_right()
 

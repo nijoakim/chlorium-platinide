@@ -25,40 +25,72 @@ from . import periodic_table as pt
 
 # TODO: Numeric arguments
 
+def move_up():
+	move(0, -1)
+
 def move_down():
+	move(0, 1)
+
+def move_left():
+	move(-1, 0)
+
+def move_right():
+	move(1, 0)
+
+def move(x, y):
+	# Verify correct types
+	if not isinstance(x, int) \
+	or not isinstance(y, int):
+		raise TypeError("'x' and 'y' must be integers.")
+	
+	# Base case
+	if  x == 0 \
+	and y == 0:
+		return
+
 	try:
-		# Remember original position
+		# Remember original position and planned movement
 		sel_period = pt.sel_period
-		sel_group = pt.sel_group
+		sel_group  = pt.sel_group
+		xx = x
+		yy = y
+
+		# Move up
+		if y < 0:
+			y += 1
+			pt.sel_group  += (0 if pt.sel_period != len(pt.periods)-2 else 2) # Adjust for lathanides and actinides
+			pt.sel_period -= 1
 
 		# Move down
-		pt.sel_group  += (0 if pt.sel_period != len(pt.periods)-3 else -2) # Adjust for lathanides and actinides
-		pt.sel_period += 1
+		elif y > 0:
+			y -= 1
+			pt.sel_group  -= (0 if pt.sel_period != len(pt.periods)-3 else 2) # Adjust for lathanides and actinides
+			pt.sel_period += 1
+
+		# Move left
+		elif x < 0:
+			x += 1
+			pt.sel_group -= 1
+
+		# Move right
+		elif x > 0:
+			x -= 1
+			pt.sel_group += 1
 
 		# Negative indexes are errors
-		if pt.sel_group < 0:
+		if pt.sel_group  < 0 \
+		or pt.sel_period < 0:
 			raise IndexError()
 
-		# Move more if no element is found
+		# Move more if None element is found
 		if pt.periods[pt.sel_period][pt.sel_group] is None:
-			move_down()
+			x = xx
+			y = yy
 
 	except IndexError:
 		# Revert to original position
 		pt.sel_period = sel_period
 		pt.sel_group  = sel_group
 
-def move_right():
-	try:
-		# Remember original position
-		sel_group = pt.sel_group
-
-		# Move right
-		pt.sel_group += 1
-
-		# Move more if no element is found
-		if pt.periods[pt.sel_period][pt.sel_group] is None:
-			move_right()
-	except IndexError:
-		# Revert to original position
-		pt.sel_group = sel_group
+	# Move more
+	move(x, y)
