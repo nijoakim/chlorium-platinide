@@ -23,5 +23,7 @@ setup(
 	author       = 'Joakim Nilsson',
 	author_email = 'nijoakim@gmail.com',
 	packages     = ['platina'],
-	scripts      = ['scripts/platina', 'scripts/pt']
+	scripts      = ['scripts/platina', 'scripts/pt'],
+	license      = 'GPLv3',
+	description  = 'Periodic table for the command-line.'
 )
