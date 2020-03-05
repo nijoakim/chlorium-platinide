@@ -1,5 +1,5 @@
 PREFIX=/usr/local/bin
-SOURCE=$(wildcard platina/*.py) $(wildcard platina/*/*.py)
+SOURCE=$(wildcard chlorium-platinide/*.py) $(wildcard chlorium-platinide/*/*.py)
 
 # TODO: use prefix?
 
@@ -15,7 +15,7 @@ build: | build/
 
 .PHONY: run
 run:
-	python3 -m platina
+	python3 -m chlorium-platinide
 
 .PHONY: install
 install: build
