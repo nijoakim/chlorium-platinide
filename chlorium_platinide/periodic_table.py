@@ -18,7 +18,7 @@
 #=========
 
 # Type checking
-from __future__ import annotations
+from __future__ import annotations # TODO: Remove when this becomes standard
 from typing import Dict, List, Optional
 
 import curses
