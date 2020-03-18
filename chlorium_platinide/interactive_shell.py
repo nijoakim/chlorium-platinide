@@ -33,11 +33,11 @@ from . import ui_functions as uif
 # Main
 #======
 
-def interactive_shell():
+def interactive_shell() -> None:
 	# Run curses wrapper for interactive shell
 	wrapper(_interactive_shell_curses)
 
-def _interactive_shell_curses(stdscr):
+def _interactive_shell_curses(stdscr) -> None:
 	# Share curses screen with periodic table
 	pt.stdscr = stdscr
 
@@ -58,7 +58,7 @@ def _interactive_shell_curses(stdscr):
 		stdscr.refresh()
 
 		# Keyboard events
-		key = stdscr.getch()
+		key: int = stdscr.getch()
 
 		#===========================
 		# Hardcoded keyboard events

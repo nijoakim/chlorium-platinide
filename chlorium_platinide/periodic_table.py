@@ -17,6 +17,10 @@
 # Imports
 #=========
 
+# Type checking
+from __future__ import annotations
+from typing import Dict, List, Optional
+
 import curses
 
 #================
@@ -27,15 +31,15 @@ import curses
 stdscr = None
 
 # Dictionaries for searching
-symbols = {}
-names   = {}
+symbols: Dict[str, Element] = {}
+names:   Dict[str, Element] = {}
 
 # Cursor coordinates
-sel_period = 0
-sel_group  = 0
+sel_period: int = 0
+sel_group:  int = 0
 
-# Periods and groups
-periods = []
+# Periods holding groups
+periods: List[List[Optional[Element]]] = []
 for i in range(7):
 	periods.append([None]*18)
 
@@ -43,8 +47,9 @@ for i in range(7):
 for i in range(2):
 	periods.append([None]*15)
 
+# TODO: Plural or singular?
 # Color dictionary
-colors = {
+colors: Dict[str, int] = {
 	'Reactive nonmetal':     3,  # Yellow
 	'Noble gas':             6,  # Cyan
 	'Alkali metal':          1,  # Red
@@ -64,11 +69,11 @@ def print_table():
 
 	for row, period in enumerate(periods):
 		# Add a spacing row between the lanthanides/actinides and the main table
-		row_offset = (0 if row < len(periods)-2 else 1)
+		row_offset: int = (0 if row < len(periods)-2 else 1)
 
 		for col, element in enumerate(period):
 			# Indent the lanthanides and actinides
-			col_offset = (0 if row < len(periods)-2 else 2)
+			col_offset: int = (0 if row < len(periods)-2 else 2)
 
 			# Write element
 			if element is not None:
@@ -86,13 +91,13 @@ def print_table():
 				# Write
 				stdscr.addstr(row+row_offset, (col+col_offset)*4, str(element), attr)
 
-class element:
+class Element:
 	def __init__(
 			self,
-			symbol,
-			name,
-			period,
-			group,
+			symbol: str,
+			name: str,
+			period: int,
+			group: int,
 		):
 
 		# Adjust for 0-indexing
@@ -105,13 +110,15 @@ class element:
 		periods[period][group]  = self
 
 		# Member variables
-		self.symbol = symbol
-		self.name   = name
-		self.type   = None
+		self.symbol: str           = symbol
+		self.name:   str           = name
+		self.type:   Optional[str] = None
 
 	def __str__(self):
 		return self.symbol
 
-def element_type(type, *elements):
+def element_type(type_: str, *elements: str):
+	"""Makes an element searchable by type."""
+
 	for element in elements:
-		symbols[element.lower()].type = type
+		symbols[element.lower()].type = type_

@@ -11,7 +11,7 @@ clean:
 build: | build/
 
 .PHONY: run
-run:
+run: build
 	python3 -m chlorium_platinide
 
 .PHONY: install
@@ -19,5 +19,6 @@ install: build
 	./setup.py install
 
 build/: $(SOURCE)
-	@touch -c build
+	mypy --no-color-output --no-implicit-optional -m chlorium_platinide
 	./setup.py build
+	@touch -c build/

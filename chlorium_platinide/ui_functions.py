@@ -37,12 +37,7 @@ def move_left():
 def move_right():
 	move(1, 0)
 
-def move(x, y):
-	# Verify correct types
-	if not isinstance(x, int) \
-	or not isinstance(y, int):
-		raise TypeError("'x' and 'y' must be integers.")
-	
+def move(x: int, y: int):
 	# Base case
 	if  x == 0 \
 	and y == 0:
@@ -50,21 +45,21 @@ def move(x, y):
 
 	try:
 		# Remember original position and planned movement
-		sel_period = pt.sel_period
-		sel_group  = pt.sel_group
-		xx = x
-		yy = y
+		sel_period: int = pt.sel_period
+		sel_group:  int = pt.sel_group
+		xx: int = x
+		yy: int = y
 
 		# Move up
 		if y < 0:
 			y += 1
-			pt.sel_group  += (0 if pt.sel_period != len(pt.periods)-2 else 2) # Adjust for lathanides and actinides
+			pt.sel_group  += (0 if pt.sel_period != len(pt.periods)-2 else 2) # Adjust for lanthanides and actinides
 			pt.sel_period -= 1
 
 		# Move down
 		elif y > 0:
 			y -= 1
-			pt.sel_group  -= (0 if pt.sel_period != len(pt.periods)-3 else 2) # Adjust for lathanides and actinides
+			pt.sel_group  -= (0 if pt.sel_period != len(pt.periods)-3 else 2) # Adjust for lanthanides and actinides
 			pt.sel_period += 1
 
 		# Move left
