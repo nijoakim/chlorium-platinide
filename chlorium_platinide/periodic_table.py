@@ -47,7 +47,6 @@ for i in range(7):
 for i in range(2):
 	periods.append([None]*15)
 
-# TODO: Plural or singular?
 # Color dictionary
 colors: Dict[str, int] = {
 	'Reactive nonmetal':     3,  # Yellow
@@ -57,15 +56,15 @@ colors: Dict[str, int] = {
 	'Transition metal':      9,  # Pale red
 	'Metalloid':             2,  # Green
 	'Post-transition metal': 15, # White
-	'Lanthanides':           13, # Pale magenta
-	'Actinides':             5,  # Magenta
+	'Lanthanide':            13, # Pale magenta
+	'Actinide':              5,  # Magenta
 	'Unknown':               8,  # Gray
 }
 
 def print_table():
 	# Write asterisks for the lanthanides and actinides
-	stdscr.addstr(len(periods)-1,   1*4, '  *', curses.color_pair(colors['Lanthanides']))
-	stdscr.addstr(len(periods)-1+1, 1*4, ' **', curses.color_pair(colors['Actinides']))
+	stdscr.addstr(len(periods)-1,   1*4, '  *', curses.color_pair(colors['Lanthanide']))
+	stdscr.addstr(len(periods)-1+1, 1*4, ' **', curses.color_pair(colors['Actinide']))
 
 	for row, period in enumerate(periods):
 		# Add a spacing row between the lanthanides/actinides and the main table

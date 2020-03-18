@@ -86,7 +86,7 @@ pt.Element('Xe', 'Xenon',      5, 18)
 # Period 6
 pt.Element('Cs', 'Caesium',     6, 1)
 pt.Element('Ba', 'Barium',      6, 2)
-pt.Element('*',  'Lanthanides', 6, 3)
+pt.Element('*',  'Lanthanide', 6, 3)
 pt.Element('Hf', 'Hafnium',     6, 4)
 pt.Element('Ta', 'Tantalum',    6, 5)
 pt.Element('W',  'Tungsten',    6, 6)
@@ -106,7 +106,7 @@ pt.Element('Rn', 'Radon',       6, 18)
 # Period 7
 pt.Element('Fr', 'Fracium',       7, 1)
 pt.Element('Ra', 'Radium',        7, 2)
-pt.Element('**', 'Actinides',     7, 3)
+pt.Element('**', 'Actinide',     7, 3)
 pt.Element('Rf', 'Rutherfordium', 7, 4)
 pt.Element('Db', 'Dubnium',       7, 5)
 pt.Element('Sg', 'Seaborgium',    7, 6)
@@ -173,10 +173,10 @@ pt.element_type('Transition metal',
 	'Hf', 'Ta', 'W', 'Re', 'Os', 'Ir', 'Pt', 'Au',
 	'Rf', 'Db', 'Sg', 'Bh', 'Hs',
 )
-pt.element_type('Lanthanides',
+pt.element_type('Lanthanide',
 	'*', 'La', 'Ce', 'Pr', 'Nd', 'Pm', 'Sm', 'Eu', 'Gd', 'Tb', 'Dy', 'Ho', 'Er', 'Tm', 'Yb', 'Lu',
 )
-pt.element_type('Actinides',
+pt.element_type('Actinide',
 	'**', 'Ac', 'Th', 'Pa', 'U', 'Np', 'Pu', 'Am', 'Cm', 'Bk', 'Cf', 'Es', 'Fm', 'Md', 'No', 'Lr',
 )
 pt.element_type('Unknown', 'Mt', 'Ds', 'Rg', 'Nh', 'Fl', 'Mc', 'Lv', 'Ts', 'Og')
