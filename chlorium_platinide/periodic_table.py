@@ -66,18 +66,18 @@ def print_table():
 	stdscr.addstr(len(periods)-1,   1*4, '  *', curses.color_pair(colors['Lanthanide']))
 	stdscr.addstr(len(periods)-1+1, 1*4, ' **', curses.color_pair(colors['Actinide']))
 
-	for row, period in enumerate(periods):
-		# Add a spacing row between the lanthanides/actinides and the main table
-		row_offset: int = (0 if row < len(periods)-2 else 1)
+	for group, period in enumerate(periods):
+		# Add a spacing group between the lanthanides/actinides and the main table
+		group_offset: int = (0 if group < len(periods)-2 else 1)
 
 		for col, element in enumerate(period):
 			# Indent the lanthanides and actinides
-			col_offset: int = (0 if row < len(periods)-2 else 2)
+			col_offset: int = (0 if group < len(periods)-2 else 2)
 
 			# Write element
 			if element is not None:
 				# Highlight selected
-				if  sel_period == row \
+				if  sel_period == group \
 				and sel_group  == col:
 					attr = curses.A_REVERSE
 				else:
@@ -88,7 +88,7 @@ def print_table():
 					attr |= curses.color_pair(colors[element.type])
 
 				# Write
-				stdscr.addstr(row+row_offset, (col+col_offset)*4, str(element), attr)
+				stdscr.addstr(group+group_offset, (col+col_offset)*4, str(element), attr)
 
 class Element:
 	def __init__(
