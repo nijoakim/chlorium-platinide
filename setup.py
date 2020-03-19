@@ -25,5 +25,5 @@ setup(
 	packages     = ['chlorium_platinide'],
 	scripts      = ['scripts/chlorium-platinide', 'scripts/clpt'],
 	license      = 'GPLv3',
-	description  = 'Periodic table for the command-line.'
+	description  = 'Interactive periodic table for the command-line.'
 )
